@@ -1,42 +1,16 @@
 # Task Manager
 
-## Projektidee
+Ein einfaches Lernprojekt fuer eine persoenliche Task-Manager-Webanwendung.
 
-Dieses Projekt ist ein einfaches Lernprojekt: eine persoenliche Task-Manager-Webanwendung.
-Spaeter soll man Aufgaben ueber eine Weboberflaeche hinzufuegen, bearbeiten und loeschen koennen.
+## Ziel
 
-## MVP
+Die Anwendung soll spaeter Aufgaben:
 
-Der kleinste sinnvolle Start fuer das Projekt ist:
+- hinzufuegen
+- bearbeiten
+- loeschen
 
-- Backend mit Spring Boot laeuft
-- erste REST-Route funktioniert
-- einfache `Task`-Klasse ist vorhanden
-- Frontend und Backend sind sauber getrennt
-
-Wir starten bewusst klein. So bleibt der Code uebersichtlich und jeder Schritt ist leicht zu verstehen.
-
-## Technologien
-
-### Frontend
-
-- Vue.js
-- HTML5
-- CSS3
-- JavaScript
-
-### Backend
-
-- Java 17
-- Spring Boot
-- Gradle
-- REST API
-
-### Spaeter
-
-- Datenbank
-- Deployment mit Render.com
-- GitHub fuer Versionierung und Zusammenarbeit
+Im Moment bauen wir das Projekt Schritt fuer Schritt auf.
 
 ## Projektstruktur
 
@@ -47,10 +21,51 @@ task-manager/
 └── backend/
 ```
 
-## Aktueller Stand
+## Technologien
 
-M1 beginnt mit dem Backend:
+- Backend: Java, Spring Boot, Gradle
+- Frontend: Vue.js, HTML, CSS, JavaScript
 
-- Spring-Boot-Projekt im Ordner `backend`
-- einfache `Task`-Klasse
-- erste GET-Route fuer Testdaten
+## Backend bauen
+
+Wechsle zuerst in den Backend-Ordner:
+
+```powershell
+cd backend
+```
+
+Dann baust du das Projekt mit:
+
+```powershell
+.\gradlew build
+```
+
+## Backend starten
+
+Starte die Spring-Boot-Anwendung mit:
+
+```powershell
+cd backend
+.\gradlew bootRun
+```
+
+Die Anwendung laeuft dann standardmaessig unter:
+
+```text
+http://localhost:8080
+```
+
+Die erste GET-Route ist:
+
+```text
+http://localhost:8080/api/tasks
+```
+
+## Backend testen
+
+Die Tests startest du mit:
+
+```powershell
+cd backend
+.\gradlew test
+```
