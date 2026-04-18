@@ -1,5 +1,6 @@
 package htw.webtech.taskmanager.task;
 
+// Diese Klasse beschreibt die Datenstruktur eines Tasks.
 public class Task {
 
     private Long id;
@@ -7,6 +8,7 @@ public class Task {
     private String description;
     private boolean completed;
 
+    // Über den Konstruktor legen wir direkt alle Werte eines Tasks fest.
     public Task(Long id, String title, String description, boolean completed) {
         this.id = id;
         this.title = title;

@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Frontend ###
+# Installierte Pakete werden lokal erzeugt und nicht ins Repository eingecheckt.
+frontend/node_modules/
+
+# Build-Ausgabe von Vite fuer das Frontend.
+frontend/dist/
