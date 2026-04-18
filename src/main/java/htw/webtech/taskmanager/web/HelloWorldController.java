@@ -9,7 +9,7 @@ public class HelloWorldController {
 
 
 
-@GetMapping(path = "/")
+@GetMapping(path = "/anas")
 public ModelAndView showHelloWorldPage(){
     return new ModelAndView("helloworld");
 }
