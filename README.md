@@ -1,43 +1,42 @@
 # Task Manager
 
-## Kurzbeschreibung
+## Projektidee
 
-Dieses Projekt ist eine webbasierte Task-Manager-Anwendung mit getrenntem Frontend und Backend.  
-Das System ermöglicht die Verwaltung von Aufgaben, Mitarbeitern und Kunden.
+Dieses Projekt ist ein einfaches Lernprojekt: eine persoenliche Task-Manager-Webanwendung.
+Spaeter soll man Aufgaben ueber eine Weboberflaeche hinzufuegen, bearbeiten und loeschen koennen.
 
-Es gibt zwei Rollen:
+## MVP
 
-- **Chef**: darf Aufgaben, Kunden und Mitarbeiter verwalten
-- **Mitarbeiter**: darf nur seine zugewiesenen Aufgaben bearbeiten, deren Status ändern und optionale Notizen schreiben
+Der kleinste sinnvolle Start fuer das Projekt ist:
 
-Das Projekt wird lokal entwickelt und später auf **Render.com** deployed.
+- Backend mit Spring Boot laeuft
+- erste REST-Route funktioniert
+- einfache `Task`-Klasse ist vorhanden
+- Frontend und Backend sind sauber getrennt
 
----
+Wir starten bewusst klein. So bleibt der Code uebersichtlich und jeder Schritt ist leicht zu verstehen.
 
 ## Technologien
 
 ### Frontend
+
 - Vue.js
-- Vite
-- JavaScript
 - HTML5
 - CSS3
+- JavaScript
 
 ### Backend
-- Java
+
+- Java 17
 - Spring Boot
 - Gradle
-- Spring Web
-- Spring Data JPA
-- Hibernate ORM
+- REST API
 
-### Datenbank
-- PostgreSQL
+### Spaeter
 
-### Deployment
-- Render.com
-
----
+- Datenbank
+- Deployment mit Render.com
+- GitHub fuer Versionierung und Zusammenarbeit
 
 ## Projektstruktur
 
@@ -46,3 +45,12 @@ task-manager/
 ├── README.md
 ├── frontend/
 └── backend/
+```
+
+## Aktueller Stand
+
+M1 beginnt mit dem Backend:
+
+- Spring-Boot-Projekt im Ordner `backend`
+- einfache `Task`-Klasse
+- erste GET-Route fuer Testdaten
