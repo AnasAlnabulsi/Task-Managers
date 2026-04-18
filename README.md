@@ -1,14 +1,48 @@
 # Task Manager
 
-## Projektbeschreibung
+## Kurzbeschreibung
 
-Der Task Manager ist eine webbasierte Anwendung zur Verwaltung von Aufgaben, Kunden und Mitarbeitenden.
-Das System unterstützt zwei Rollen: **Chef** und **Mitarbeiter**.
+Dieses Projekt ist eine webbasierte Task-Manager-Anwendung mit getrenntem Frontend und Backend.  
+Das System ermöglicht die Verwaltung von Aufgaben, Mitarbeitern und Kunden.
 
-Der Chef hat Vollzugriff und kann Aufgaben, Kunden und Mitarbeitende anlegen, bearbeiten und löschen sowie Aufgaben zuweisen, Prioritäten setzen und Fälligkeitsdaten verwalten.
-Mitarbeiter können ausschließlich ihre eigenen zugewiesenen Aufgaben einsehen, deren Status ändern und optionale Notizen hinzufügen.
+Es gibt zwei Rollen:
 
-Die Anwendung besteht aus einem **Frontend (Vue.js)** und einem **Backend (Spring Boot mit Java)**, die über eine **REST API** miteinander kommunizieren.
-Die Daten werden in einer **PostgreSQL-Datenbank** gespeichert.
+- **Chef**: darf Aufgaben, Kunden und Mitarbeiter verwalten
+- **Mitarbeiter**: darf nur seine zugewiesenen Aufgaben bearbeiten, deren Status ändern und optionale Notizen schreiben
 
-Ziel des Projekts ist es, eine klare, strukturierte und erweiterbare Fullstack-Anwendung zu entwickeln, die typische Geschäftsprozesse im Aufgabenmanagement abbildet.
+Das Projekt wird lokal entwickelt und später auf **Render.com** deployed.
+
+---
+
+## Technologien
+
+### Frontend
+- Vue.js
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+
+### Backend
+- Java
+- Spring Boot
+- Gradle
+- Spring Web
+- Spring Data JPA
+- Hibernate ORM
+
+### Datenbank
+- PostgreSQL
+
+### Deployment
+- Render.com
+
+---
+
+## Projektstruktur
+
+```text
+task-manager/
+├── README.md
+├── frontend/
+└── backend/
