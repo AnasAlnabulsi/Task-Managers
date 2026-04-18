@@ -1,45 +1,5 @@
 # Task Manager
 
-<<<<<<< HEAD
-## Kurzbeschreibung
-
-Dieses Projekt ist eine webbasierte Task-Manager-Anwendung mit getrenntem Frontend und Backend.  
-Das System ermöglicht die Verwaltung von Aufgaben, Mitarbeitern und Kunden.
-
-Es gibt zwei Rollen:
-
-- **Chef**: darf Aufgaben, Kunden und Mitarbeiter verwalten
-- **Mitarbeiter**: darf nur seine zugewiesenen Aufgaben bearbeiten, deren Status ändern und optionale Notizen schreiben
-
-Das Projekt wird lokal entwickelt und später auf **Render.com** deployed.
-
----
-
-## Technologien
-
-### Frontend
-- Vue.js
-- Vite
-- JavaScript
-- HTML5
-- CSS3
-
-### Backend
-- Java
-- Spring Boot
-- Gradle
-- Spring Web
-- Spring Data JPA
-- Hibernate ORM
-
-### Datenbank
-- PostgreSQL
-
-### Deployment
-- Render.com
-
----
-=======
 Ein einfaches Lernprojekt fuer eine persoenliche Task-Manager-Webanwendung.
 
 ## Ziel
@@ -51,7 +11,6 @@ Die Anwendung soll spaeter Aufgaben:
 - loeschen
 
 Im Moment bauen wir das Projekt Schritt fuer Schritt auf.
->>>>>>> anas
 
 ## Projektstruktur
 
@@ -59,9 +18,6 @@ Im Moment bauen wir das Projekt Schritt fuer Schritt auf.
 task-manager/
 ├── README.md
 ├── frontend/
-<<<<<<< HEAD
-└── backend/
-=======
 └── backend/
 ```
 
@@ -111,4 +67,3 @@ Die Tests startest du mit:
 ```powershell
 .\gradlew test
 ```
->>>>>>> anas
