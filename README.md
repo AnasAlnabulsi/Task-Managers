@@ -45,7 +45,6 @@ Dann baust du das Projekt mit:
 Starte die Spring-Boot-Anwendung mit:
 
 ```powershell
-cd backend
 .\gradlew bootRun
 ```
 
@@ -66,6 +65,5 @@ http://localhost:8080/api/tasks
 Die Tests startest du mit:
 
 ```powershell
-cd backend
 .\gradlew test
 ```
