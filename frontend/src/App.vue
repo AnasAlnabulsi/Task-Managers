@@ -2,6 +2,8 @@
 import { onMounted, ref } from "vue";
 import TaskList from "./components/TaskList.vue";
 
+const API_BASE_URL = "https://task-managers-14kw.onrender.com";
+
 // Hier speichern wir die geladenen Tasks.
 const tasks = ref([]);
 // loading steuert die Anzeige, solange die Daten noch geladen werden.
@@ -17,7 +19,7 @@ const newTask = ref({
 // Lädt die Tasks vom Spring-Backend.
 async function loadTasks() {
   try {
-    const response = await fetch("http://localhost:8080/api/tasks");
+    const response = await fetch(`${API_BASE_URL}/api/tasks`);
 
     // Wenn der Server keinen erfolgreichen Status liefert, erzeugen wir einen Fehler.
     if (!response.ok) {
@@ -43,7 +45,7 @@ async function addTask() {
   try {
     errorMessage.value = "";
 
-    const response = await fetch("http://localhost:8080/api/tasks", {
+    const response = await fetch(`${API_BASE_URL}/api/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -71,7 +73,7 @@ async function updateTaskStatus(task, status) {
   try {
     errorMessage.value = "";
 
-    const response = await fetch(`http://localhost:8080/api/tasks/${task.id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${task.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -98,7 +100,7 @@ async function deleteTask(taskId) {
   try {
     errorMessage.value = "";
 
-    const response = await fetch(`http://localhost:8080/api/tasks/${taskId}`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
       method: "DELETE"
     });
 

@@ -217,7 +217,7 @@ java -Dserver.port=$PORT -jar build/libs/taskmanager-0.0.1-SNAPSHOT.jar
 Nach dem Deployment sollte diese Route erreichbar sein:
 
 ```text
-https://DEIN-BACKEND.onrender.com/api/tasks
+https://task-managers-14kw.onrender.com/api/tasks
 ```
 
 ### Frontend auf Render
@@ -248,17 +248,16 @@ dist
 
 ### Wichtig für Render
 
-Vor dem Deployment muss das Frontend die echte Backend-URL verwenden.
-Aktuell ist lokal noch `http://localhost:8080` eingetragen.
+Das Frontend verwendet für das Deployment diese Backend-URL:
 
-Außerdem muss im Backend bei `@CrossOrigin` die Render-Frontend-URL erlaubt
-werden, zum Beispiel:
+```text
+https://task-managers-14kw.onrender.com
+```
+
+Im Backend ist CORS aktuell für einfache Projekt- und Render-Tests offen:
 
 ```java
-@CrossOrigin(origins = {
-        "http://localhost:5173",
-        "https://DEIN-FRONTEND.onrender.com"
-})
+@CrossOrigin(origins = "*")
 ```
 
 ## Aktueller Stand
