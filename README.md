@@ -246,6 +246,12 @@ Publish Directory:
 dist
 ```
 
+Nach dem Deployment ist das Frontend erreichbar unter:
+
+```text
+https://task-managers-1-4934.onrender.com
+```
+
 ### Wichtig für Render
 
 Das Frontend verwendet für das Deployment diese Backend-URL:
@@ -257,7 +263,10 @@ https://task-managers-14kw.onrender.com
 Im Backend ist CORS aktuell für einfache Projekt- und Render-Tests offen:
 
 ```java
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://task-managers-1-4934.onrender.com"
+})
 ```
 
 ## Aktueller Stand

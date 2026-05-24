@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://task-managers-1-4934.onrender.com"
+})
 @RestController
 public class TaskController {
 
