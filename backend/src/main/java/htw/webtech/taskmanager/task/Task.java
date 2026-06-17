@@ -1,7 +1,17 @@
 package htw.webtech.taskmanager.task;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+// Diese Klasse wird von JPA als Tabelle in PostgreSQL gespeichert.
+@Entity
 public class Task {
 
+    // Die ID wird von PostgreSQL automatisch erzeugt.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;

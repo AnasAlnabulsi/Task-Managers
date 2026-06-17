@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = {
@@ -21,41 +20,40 @@ import java.util.List;
 @RestController
 public class TaskController {
 
-    private final List<Task> tasks = new ArrayList<>(List.of(
-            new Task(1L, "Spring Boot starten", "Pruefen, ob das Backend laeuft", "TODO"),
-            new Task(2L, "Erste GET-Route testen", "Antwort im Browser kontrollieren", "Erledigt")
-    ));
-    private long nextId = 3L;
+    // Das Repository ersetzt die frühere ArrayList und speichert Tasks in PostgreSQL.
+    private final TaskRepository taskRepository;
+
+    public TaskController(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     @GetMapping("/api/tasks")
     public List<Task> getTasks() {
-        return tasks;
+        // Lädt alle gespeicherten Tasks aus der Datenbank.
+        return taskRepository.findAll();
     }
 
     @PostMapping("/api/tasks")
     public Task addTask(@RequestBody Task task) {
-        task.setId(nextId);
-        nextId++;
         task.setStatus(normalizeStatus(task.getStatus()));
-        tasks.add(task);
-        return task;
+        // Speichert den vom Frontend gesendeten Task als neue Zeile in PostgreSQL.
+        return taskRepository.save(task);
     }
 
     @PutMapping("/api/tasks/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task updatedTask) {
-        for (Task task : tasks) {
-            if (task.getId().equals(id)) {
-                task.setStatus(normalizeStatus(updatedTask.getStatus()));
-                return task;
-            }
-        }
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task nicht gefunden"));
 
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task nicht gefunden");
+        task.setStatus(normalizeStatus(updatedTask.getStatus()));
+        // Speichert die Änderung am bestehenden Task in PostgreSQL.
+        return taskRepository.save(task);
     }
 
     @DeleteMapping("/api/tasks/{id}")
     public void deleteTask(@PathVariable Long id) {
-        tasks.removeIf(task -> task.getId().equals(id));
+        // Löscht den Task mit dieser ID aus der Datenbank.
+        taskRepository.deleteById(id);
     }
 
     private String normalizeStatus(String status) {

@@ -45,6 +45,7 @@ async function addTask() {
   try {
     errorMessage.value = "";
 
+    // Sendet den neuen Task per POST an das Backend; dort wird er in PostgreSQL gespeichert.
     const response = await fetch(`${API_BASE_URL}/api/tasks`, {
       method: "POST",
       headers: {
